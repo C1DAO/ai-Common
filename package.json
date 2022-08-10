@@ -1,0 +1,57 @@
+{
+  "name": "@vmeta3/common",
+  "version": "1.0.1",
+  "description": "[Vmeta3] Advanced typescript tooling used by various services",
+  "main": "dist/index",
+  "types": "dist/index",
+  "files": [
+    "dist/*"
+  ],
+  "scripts": {
+    "all": "yarn clean && yarn build && yarn test && yarn lint:fix && yarn lint",
+    "build": "tsc -p tsconfig.json",
+    "clean": "rimraf dist/ ./tsconfig.tsbuildinfo",
+    "lint:check": "eslint . --max-warnings=0",
+    "lint:fix": "yarn lint:check --fix",
+    "lint": "yarn lint:fix && yarn lint:check",
+    "pre-commit": "lint-staged",
+    "test": "ts-mocha test/*.spec.ts"
+  },
+  "keywords": [
+    "vmeta3",
+    "ethereum",
+    "common",
+    "typescript"
+  ],
+  "homepage": "https://github.com/VMETA3/vmeta3-common",
+  "license": "MIT",
+  "author": "Vmeta3 Labs",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/VMETA3/vmeta3-common.git"
+  },
+  "dependencies": {
+    "@sentry/node": "^6.3.1",
+    "@vmeta3/core-utils": "1.0.2",
+    "bcfg": "^0.1.7",
+    "commander": "^9.0.0",
+    "dotenv": "^16.0.0",
+    "envalid": "^7.2.2",
+    "ethers": "^5.6.8",
+    "express": "^4.17.1",
+    "lodash": "^4.17.21",
+    "pino": "^6.11.3",
+    "pino-multi-stream": "^5.3.0",
+    "pino-sentry": "^0.7.0",
+    "prom-client": "^13.1.0"
+  },
+  "devDependencies": {
+    "@ethersproject/abstract-provider": "^5.6.1",
+    "@ethersproject/abstract-signer": "^5.6.2",
+    "@types/express": "^4.17.12",
+    "@types/pino": "^6.3.6",
+    "@types/pino-multi-stream": "^5.1.1",
+    "chai": "^4.3.4",
+    "supertest": "^6.1.4"
+  }
+}
