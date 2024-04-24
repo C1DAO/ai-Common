@@ -1,4 +1,4 @@
-# @vmeta3/common
+# @vmeta3ai/common
 
 ## What is this?
 
